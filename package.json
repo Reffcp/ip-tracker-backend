@@ -4,12 +4,15 @@
   "description": "API para geolocalización de ip publica",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js --host"
   },
   "author": "reffcp",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
-    "ipinfo": "^1.5.1"
+    "ipinfo": "^1.5.1",
+    "nodemon": "^3.1.4"
   }
 }
