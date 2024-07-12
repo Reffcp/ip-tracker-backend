@@ -1,0 +1,15 @@
+{
+  "name": "ip-tracker-backend",
+  "version": "1.0.0",
+  "description": "API para geolocalización de ip publica",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "reffcp",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "ipinfo": "^1.5.1"
+  }
+}
