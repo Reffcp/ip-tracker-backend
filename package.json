@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js --host"
+    "start:dev": "nodemon index.js --host",
+    "start:prod": "NODE_ENV=production node index.js",
+    "env:push": "npx dotenv-vault@latest push",
+    "env:pull": "npx dotenv-vault@latest pull",
+    "env:pull-prod": "npx dotenv-vault@latest pull production"
   },
   "author": "reffcp",
   "license": "MIT",
