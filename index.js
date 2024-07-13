@@ -3,16 +3,15 @@ const cors = require("cors");
 require("./config.js");
 const routes = require("./src/router");
 const https = require("https");
+const fs = require("fs");
 
 const app = express();
 app.use(cors());
 routes(app);
 
 if (process.env.ENVIROMENT === "development") {
-  app.listen(process.env.API_PORT, process.env.API_HOST, () => {
-    console.log(
-      `Server is running on http://localhost:${process.env.API_PORT}`
-    );
+  app.listen(process.env.PORT, process.env.HOST, () => {
+    console.log(`Server is running on http://localhost:${process.env.PORT}`);
   });
 } else {
   const options = {
@@ -21,9 +20,9 @@ if (process.env.ENVIROMENT === "development") {
   };
   https
     .createServer(options, app)
-    .listen(process.env.API_PORT, process.env.API_HOST, () => {
+    .listen(process.env.PORT, process.env.HOST, () => {
       console.log(
-        `Server is running on https://${process.env.API_HOST}:${process.env.API_PORT}`
+        `Server is running on https://${process.env.HOST}:${process.env.PORT}`
       );
     });
 }
